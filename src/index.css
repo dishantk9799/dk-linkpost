@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+
+/* COLOR THEME */
+.primary-text {
+  color: #030712;
+}
+
+.secondary-text {
+  color: #FFFFFF;
+}
+
+.accent-text {
+  color: #7F00FF;
+}
+.accent-text-hover:hover{
+  color: #7F00FF;
+}
+
+.neutral-text {
+  color: #666666;
+}
+
+.primary-bg {
+  background-color: #030712;
+}
+
+.secondary-bg {
+  background-color: #FFFFFF;
+}
+
+.accent-bg {
+  background-color: #7F00FF;
+}
+
+.accent-bg-hover:hover {
+  background-color: #6601ca;
+}
+
+.neutral-bg {
+  background-color: #666666;
+}
