@@ -1,9 +1,9 @@
 import React from 'react'
 import linkedinIcon from "../assets/linkedin.svg";
 import { FaHome, FaUserFriends, FaBriefcase, FaCommentDots, FaBell } from "react-icons/fa";
-const Nav = () => {
+const Nav = ({ setToggle, toggle }) => {
   return (
-    <div className='w-full h-16 md:h-18 px-3 md:px-5 border-b-2 border-b-zinc-600 flex justify-between items-center'>
+    <div className='w-full h-16 px-3 md:px-5 border-b-2 border-b-zinc-600 flex justify-between items-center'>
 
       {/* LOGO */}
       <div className='w-10'>
@@ -39,8 +39,10 @@ const Nav = () => {
       </div>
 
       {/* POST BUTTON  */}
-      <button className='px-4 py-2 accent-bg accent-bg-hover transition duration-200 rounded-3xl cursor-pointer'>
-        Create a post
+      <button onClick={() => {
+        setToggle(prev => !prev)
+      }} className='px-4 py-2 w-32 accent-bg accent-bg-hover transition duration-200 rounded-3xl cursor-pointer'>
+        {toggle ? "Create a post" : "Show post"}
       </button>
     </div>
   )
