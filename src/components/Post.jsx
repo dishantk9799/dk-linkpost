@@ -14,9 +14,7 @@ const Post = ({ setToggle, setPostData, editPost, setEditPost }) => {
 
   const onHandle = (data) => {
     if (editPost) {
-      setPostData(prev =>
-        prev.map(item => (item === editPost ? data : item))
-      );
+      setPostData(prev => prev.map(item => (item === editPost ? data : item)));
       setEditPost(null);
     } else {
       setPostData(prev => [...prev, data]);
@@ -39,10 +37,9 @@ const Post = ({ setToggle, setPostData, editPost, setEditPost }) => {
           <h2 className="text-2xl font-semibold secondary-text">Create Post</h2>
 
           {/* NAME AND ROLE */}
-          <div className="flex flex-col md:flex-row gap-3">
+          <div className="flex md:items-end flex-col md:flex-row gap-3">
 
             {/* NAME */}
-
             <input
               type="text"
               {...register("name", { required: "Name is required" })}
@@ -85,11 +82,12 @@ const Post = ({ setToggle, setPostData, editPost, setEditPost }) => {
               className="w-full p-2 rounded bg-zinc-800 secondary-text outline-none focus:ring-2 focus:ring-violet-500"
             />
             {errors.userImg && (
-              <p className="text-red-500 text-xs mt-1">
+              <p className="text-red-500 text-xs">
                 {errors.userImg.message}
               </p>
             )}
           </div>
+
           {/* POST TEXT */}
           <div>
             <textarea
@@ -113,7 +111,7 @@ const Post = ({ setToggle, setPostData, editPost, setEditPost }) => {
               className="w-full p-2 rounded bg-zinc-800 secondary-text outline-none resize-none focus:ring-2 focus:ring-violet-500"
             ></textarea>
             {errors.text && (
-              <p className="text-red-500 text-xs mt-1">
+              <p className="text-red-500 text-xs">
                 {errors.text.message}
               </p>
             )}
@@ -133,7 +131,7 @@ const Post = ({ setToggle, setPostData, editPost, setEditPost }) => {
               type="submit"
               className="px-6 py-2 accent-bg accent-bg-hover rounded-full secondary-text font-medium transition duration-200"
             >
-              Create Post
+              {editPost? "Update post":"Create post"}
             </button>
           </div>
 

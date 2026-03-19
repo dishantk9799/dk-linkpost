@@ -42,7 +42,7 @@ const Nav = ({ setToggle, toggle }) => {
       <button onClick={() => {
         setToggle(prev => !prev)
       }} className='px-4 py-2 w-32 accent-bg accent-bg-hover transition duration-200 rounded-3xl cursor-pointer'>
-        {toggle ? "Create a post" : "Show post"}
+        {toggle ? "Create post" : "Show post"}
       </button>
     </div>
   )

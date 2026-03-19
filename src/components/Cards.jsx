@@ -84,7 +84,7 @@ const Cards = ({ setToggle, postData, setPostData, setEditPost }) => {
 
             {/* POST TEXT */}
             <div div className='p-2' >
-              <p className={`${expanded === index ? '' : 'line-clamp-2'} wrap-break-word text-sm leading-relaxed`}>
+              <p className={`${expanded === index ? '' : 'line-clamp-2'} whitespace-pre-line wrap-break-word text-sm leading-relaxed`}>
                 {item.text}
               </p>
               {
