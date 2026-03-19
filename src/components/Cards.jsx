@@ -24,7 +24,7 @@ const Cards = ({ setToggle, postData, setPostData, setEditPost }) => {
       <LeftSide />
 
       {/* POST CARDS */}
-      <div className='lg:flex-2 w-full overflow-y-auto flex flex-col gap-5 border-x-2 border-x-zinc-600 p-2'>
+      <div className='lg:flex-2 w-full overflow-y-auto flex flex-col gap-5 md:border-x-2 border-x-zinc-600 p-2'>
 
         {postData && postData.length > 0 ? postData.map((item, index) => (
 
@@ -64,14 +64,19 @@ const Cards = ({ setToggle, postData, setPostData, setEditPost }) => {
                   <div className="absolute right-0 top-10 w-32 bg-zinc-800 overflow-hidden rounded-lg shadow-lg border border-zinc-700 z-50">
 
                     <button
-                     onClick={() => handleEdit(item)}
+                      onClick={() => handleEdit(item)}
                       className="w-full flex gap-2 items-center text-left px-3 py-2 text-sm hover:bg-zinc-700">
                       <div><MdEdit /></div>
                       <div>Edit</div>
                     </button>
 
                     <button
-                      onClick={() => handleDelete(index)}
+                      onClick={() => {
+                        const confirmDelete = window.confirm("Are you sure you want to delete this post?");
+                        if (confirmDelete) {
+                          handleDelete(index);
+                        }
+                      }}
                       className="w-full flex gap-2 items-center text-left px-3 py-2 text-sm hover:bg-red-500 hover:text-white">
                       <div><MdDelete /></div>
                       <div>Delete</div>

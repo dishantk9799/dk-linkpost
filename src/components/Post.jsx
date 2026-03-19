@@ -30,8 +30,8 @@ const Post = ({ setToggle, setPostData, editPost, setEditPost }) => {
       <LeftSide />
 
       {/* CREATE POST*/}
-      <div className='lg:flex-2 w-full overflow-auto justify-center flex flex-col gap-5 border-x-2 border-x-zinc-600 p-2'>
-        <form onSubmit={handleSubmit(onHandle)} className="w-full  bg-zinc-900 p-2 rounded-lg flex flex-col gap-4">
+      <div className='lg:flex-2 w-full overflow-auto justify-center flex flex-col gap-5 mt-2 md:border-x-2 border-x-zinc-600 p-2'>
+        <form onSubmit={handleSubmit(onHandle)} className="w-full  bg-zinc-900 p-4 rounded-lg flex flex-col gap-4">
 
           {/* TITLE */}
           <h2 className="text-2xl font-semibold secondary-text">Create Post</h2>
@@ -86,6 +86,7 @@ const Post = ({ setToggle, setPostData, editPost, setEditPost }) => {
                 {errors.userImg.message}
               </p>
             )}
+
           </div>
 
           {/* POST TEXT */}
@@ -107,7 +108,7 @@ const Post = ({ setToggle, setPostData, editPost, setEditPost }) => {
                     return true;
                   }
                 })}
-              rows="10"
+              rows="8"
               className="w-full p-2 rounded bg-zinc-800 secondary-text outline-none resize-none focus:ring-2 focus:ring-violet-500"
             ></textarea>
             {errors.text && (
@@ -131,7 +132,7 @@ const Post = ({ setToggle, setPostData, editPost, setEditPost }) => {
               type="submit"
               className="px-6 py-2 accent-bg accent-bg-hover rounded-full secondary-text font-medium transition duration-200"
             >
-              {editPost? "Update post":"Create post"}
+              {editPost ? "Update post" : "Create post"}
             </button>
           </div>
 
