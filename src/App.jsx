@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import menuIcon from "./assets/menu.svg";
 import Nav from "./components/Nav";
 import Cards from './components/Cards';
 import Post from './components/Post';
