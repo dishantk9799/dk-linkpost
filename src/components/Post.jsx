@@ -17,7 +17,7 @@ const Post = ({ setToggle, setPostData, editPost, setEditPost }) => {
       setPostData(prev => prev.map(item => (item === editPost ? data : item)));
       setEditPost(null);
     } else {
-      setPostData(prev => [...prev, data]);
+      setPostData(prev => [data,...prev]);
     }
 
     setToggle(prev => !prev);
